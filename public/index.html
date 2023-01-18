@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Upload Form</title>
+  </head>
+  <body>
+    <form id="upload-form">
+      <input type="file" id="picture" name="picture" accept="image/*" required>
+      <input type="text" id="order-number" name="order-number" pattern="[A-Za-z0-9]{1,10}" required>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="message"></p>
+    <script>
+      const form = document.getElementById("upload-form");
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const picture = document.getElementById("picture").files[0];
+        const orderNumber = document.getElementById("order-number").value;
+        if (picture.size > 2000000) {
+          document.getElementById("message").innerHTML = "Error: Image size should be less than 2MB";
+          return;
+        }
+        const formData = new FormData();
+        formData.append("picture", picture);
+        formData.append("orderNumber", orderNumber);
+        fetch("/upload", {
+          method: "POST",
+          body: formData,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.status === "success") {
+              document.getElementById("message").innerHTML= "Data successfully added to the sheet!";
+            } else {
+              document.getElementById("message").innerHTML = "Error: " + data.message;
+            }
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            document.getElementById("message").innerHTML = "Error: " + error;
+          });
+      });
+    </script>
+  </body>
+</html>
+
