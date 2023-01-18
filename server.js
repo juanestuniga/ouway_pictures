@@ -99,7 +99,7 @@ app.post("/upload", upload.single("picture"), (req, res) => {
 app.get("/", (req, res) => {
     res.send("Welcome to the upload server")
 });
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("Server is running on port 3000");
 });
 
