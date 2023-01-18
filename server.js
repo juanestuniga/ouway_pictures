@@ -65,7 +65,7 @@ app.post("/upload", upload.single("picture"), (req, res) => {
           }
       });
     }
-  
+  //Upload the file to Google sheets
     function appendData(auth, date, fileName, orderNumber,imageUrl) {
         console.log(date);
         console.log(fileName);
