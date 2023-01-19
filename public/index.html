@@ -3,6 +3,20 @@
   <head>
     <title>Upload Form</title>
     <style>
+      @media only screen and (max-width: 600px) {
+        form {
+          /* adjust the width of the form for smaller screens */
+          max-width: 90%;
+        }
+        input[type="file"], input[type="text"] {
+          /* adjust the font size for smaller screens */
+          font-size: 14px;
+        }
+        button[type="submit"] {
+          /* adjust the padding for smaller screens */
+          padding: 10px 20px;
+        }
+      }
       /* CSS styles go here for html. */
       body {
         background-color: #f2f2f2;
