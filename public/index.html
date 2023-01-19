@@ -3,20 +3,6 @@
   <head>
     <title>Upload Form</title>
     <style>
-      @media only screen and (max-width: 600px) {
-        form {
-          /* adjust the width of the form for smaller screens */
-          max-width: 90%;
-        }
-        input[type="file"], input[type="text"] {
-          /* adjust the font size for smaller screens */
-          font-size: 14px;
-        }
-        button[type="submit"] {
-          /* adjust the padding for smaller screens */
-          padding: 10px 20px;
-        }
-      }
       /* CSS styles go here for html. */
       body {
         background-color: #f2f2f2;
@@ -28,6 +14,21 @@
         padding: 20px;
         background-color: #fff;
         border-radius: 10px;
+        text-align: center; /* center the form */
+      }
+      /* make elements bigger for smaller screens */
+      @media (max-width: 600px) {
+        form {
+          max-width: 500px;
+          margin: 50px auto;
+          padding: 20px;
+        }
+        input[type="file"], input[type="text"] {
+          font-size: 1.2em;
+        }
+        button[type="submit"] {
+          font-size: 1.2em;
+        }
       }
       input[type="file"], input[type="text"] {
         width: 100%;
@@ -57,6 +58,7 @@
         border-radius: 4px;
       }
     </style>
+    
   </head>
   <body>
     <form id="upload-form">
