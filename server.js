@@ -3,7 +3,10 @@ const app = express();
 const { google } = require("googleapis");
 const multer = require("multer");
 const storage = multer.memoryStorage();
-const upload = multer({ storage: storage });
+const upload = multer({ 
+  storage: storage,
+  limits: { fileSize: 4000000 } // 4MB
+});
 const dotenv = require("dotenv").config();
 const { Storage } = require('@google-cloud/storage');
 
