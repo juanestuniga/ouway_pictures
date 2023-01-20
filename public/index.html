@@ -73,7 +73,7 @@
         event.preventDefault();
         const picture = document.getElementById("picture").files[0];
         const orderNumber = document.getElementById("order-number").value;
-        if (picture.size > 4000000) {
+        if (picture.size > 6000000) {
           document.getElementById("message").innerHTML = "Error: Image size should be less than 2MB";
           return;
         }
