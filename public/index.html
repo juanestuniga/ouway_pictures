@@ -97,6 +97,7 @@
           .then((data) => {
             if (data.status === "success") {
               document.getElementById("message").innerHTML= "Data successfully added to the sheet!";
+              location.reload();
             } else {
               document.getElementById("message").innerHTML = "Error: " + data.message;
             }
