@@ -63,7 +63,7 @@
   <body>
     <form id="upload-form">
       <input type="file" id="picture" name="picture" accept="image/*" required>
-      <input type="text" id="order-number" name="order-number" pattern="[A-Za-z0-9]{1,10}" required>
+      <input type="text" id="order-number" name="order-number" pattern="[A-Za-z0-9-]{1,20}" required>
       <button type="submit">Submit</button>
     </form>
     <p id="message"></p>
